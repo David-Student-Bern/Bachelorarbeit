@@ -98,7 +98,7 @@ My thesis explains the modifications made to the two flare-finding algorithms in
  
     **Description:**
     1. Creates a list with all KIC for all the flares found by Okamoto et al. --> `KIC_list.txt `
-    2. Downloads all light curve files for those KIC and creates a new directory for them: mastDownload\Kepler\
+    2. Downloads all light curve files for those KIC into a new directory: mastDownload\Kepler\
   
   - `KIC_list.txt`
  
