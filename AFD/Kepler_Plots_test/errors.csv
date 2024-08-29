@@ -1,0 +1,92 @@
+,file_name,traceback
+0,C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler\kplr001028018_lc_Q111111111111111111\kplr001028018-2009259160929_llc.fits,"Traceback (most recent call last):
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 428, in <module>
+    Teff, R, time, flux, n, plots_path, plot_file_name)
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 184, in plot_star
+    second_point_avg = np.average(normalized_flux[time_end_index[i]:time_end_index[i] + 5])
+IndexError: list index out of range
+"
+1,C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler\kplr001028018_lc_Q111111111111111111\kplr001028018-2010078095331_llc.fits,"Traceback (most recent call last):
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 428, in <module>
+    Teff, R, time, flux, n, plots_path, plot_file_name)
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 184, in plot_star
+    second_point_avg = np.average(normalized_flux[time_end_index[i]:time_end_index[i] + 5])
+IndexError: list index out of range
+"
+2,C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler\kplr001028018_lc_Q111111111111111111\kplr001028018-2010174085026_llc.fits,"Traceback (most recent call last):
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 428, in <module>
+    Teff, R, time, flux, n, plots_path, plot_file_name)
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 169, in plot_star
+    if subarr[j] <= threshold2:
+IndexError: index 40 is out of bounds for axis 0 with size 40
+"
+3,C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler\kplr001028018_lc_Q111111111111111111\kplr001028018-2010355172524_llc.fits,"Traceback (most recent call last):
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 428, in <module>
+    Teff, R, time, flux, n, plots_path, plot_file_name)
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 169, in plot_star
+    if subarr[j] <= threshold2:
+IndexError: index 40 is out of bounds for axis 0 with size 40
+"
+4,C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler\kplr001028018_lc_Q111111111111111111\kplr001028018-2011073133259_llc.fits,"Traceback (most recent call last):
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 428, in <module>
+    Teff, R, time, flux, n, plots_path, plot_file_name)
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 169, in plot_star
+    if subarr[j] <= threshold2:
+IndexError: index 40 is out of bounds for axis 0 with size 40
+"
+5,C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler\kplr001028018_lc_Q111111111111111111\kplr001028018-2011177032512_llc.fits,"Traceback (most recent call last):
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 428, in <module>
+    Teff, R, time, flux, n, plots_path, plot_file_name)
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 129, in plot_star
+    x = np.array([time[time_start_index[i] - 2], time[max_flare_index[i] + 12], time[max_flare_index[i] + 16]])
+IndexError: index 4621 is out of bounds for axis 0 with size 4610
+"
+6,C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler\kplr001028018_lc_Q111111111111111111\kplr001028018-2012004120508_llc.fits,"Traceback (most recent call last):
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 428, in <module>
+    Teff, R, time, flux, n, plots_path, plot_file_name)
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 184, in plot_star
+    second_point_avg = np.average(normalized_flux[time_end_index[i]:time_end_index[i] + 5])
+IndexError: list index out of range
+"
+7,C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler\kplr001028018_lc_Q111111111111111111\kplr001028018-2012088054726_llc.fits,"Traceback (most recent call last):
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 428, in <module>
+    Teff, R, time, flux, n, plots_path, plot_file_name)
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 169, in plot_star
+    if subarr[j] <= threshold2:
+IndexError: index 40 is out of bounds for axis 0 with size 40
+"
+8,C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler\kplr001028018_lc_Q111111111111111111\kplr001028018-2013098041711_llc.fits,"Traceback (most recent call last):
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 428, in <module>
+    Teff, R, time, flux, n, plots_path, plot_file_name)
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 169, in plot_star
+    if subarr[j] <= threshold2:
+IndexError: index 40 is out of bounds for axis 0 with size 40
+"
+9,C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler\kplr001028018_lc_Q111111111111111111\kplr001028018-2013131215648_llc.fits,"Traceback (most recent call last):
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 428, in <module>
+    Teff, R, time, flux, n, plots_path, plot_file_name)
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 184, in plot_star
+    second_point_avg = np.average(normalized_flux[time_end_index[i]:time_end_index[i] + 5])
+IndexError: list index out of range
+"
+10,C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler\kplr002012690_lc_Q011111111111111111\kplr002012690-2009350155506_llc.fits,"Traceback (most recent call last):
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 428, in <module>
+    Teff, R, time, flux, n, plots_path, plot_file_name)
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 184, in plot_star
+    second_point_avg = np.average(normalized_flux[time_end_index[i]:time_end_index[i] + 5])
+IndexError: list index out of range
+"
+11,C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler\kplr002012690_lc_Q011111111111111111\kplr002012690-2010174085026_llc.fits,"Traceback (most recent call last):
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 428, in <module>
+    Teff, R, time, flux, n, plots_path, plot_file_name)
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 184, in plot_star
+    second_point_avg = np.average(normalized_flux[time_end_index[i]:time_end_index[i] + 5])
+IndexError: list index out of range
+"
+12,C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler\kplr002012690_lc_Q011111111111111111\kplr002012690-2012004120508_llc.fits,"Traceback (most recent call last):
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 428, in <module>
+    Teff, R, time, flux, n, plots_path, plot_file_name)
+  File ""c:\users\david\documents\david\unibe\bachelorarbeit\afd\afd.py"", line 184, in plot_star
+    second_point_avg = np.average(normalized_flux[time_end_index[i]:time_end_index[i] + 5])
+IndexError: list index out of range
+"
