@@ -8,16 +8,7 @@ from astropy.io import fits
 # from astropy.table import Table 
 import matplotlib.pyplot as plt
 import numpy as np
-import glob
 
-# from astroquery.mast import Mast
-# from astroquery.mast import Observations
-
-
-# All files and directories ending with .txt with depth of 2 folders, ignoring names beginning with a dot:
-# print(glob.glob("C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler/*/*.fits"))
-
-all_filenames = glob.glob("C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler/*/*llc.fits")
 
 # =============================================================================
 # files that produce the following error:
@@ -101,6 +92,8 @@ plt.show()
 # close ups for flare
 # =============================================================================
 """
+
+# add start and end time of the flare
 t_start = 2455422.4930961
 t_end = 2455422.5544
 
@@ -144,4 +137,4 @@ plt.legend()
 plt.xlabel('Time (days)')
 plt.ylabel('Flux (electrons/second)')
 plt.show()
-# """
+"""

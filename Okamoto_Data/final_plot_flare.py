@@ -20,7 +20,7 @@ Okamoto_df = pd.DataFrame(
 
 flare_files = glob.glob("C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler/*/*llc.fits")
 
-flare_files = flare_files[1000:]
+# flare_files = flare_files[1000:]
 
 # plot files with flares and flares
 for filename in flare_files:

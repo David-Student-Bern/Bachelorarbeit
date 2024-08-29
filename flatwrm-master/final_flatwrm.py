@@ -732,7 +732,7 @@ def GenerateOutput(time,flux,istart,istop,period,outputfile,KIC,Teff,R, degree=1
 
 flare_files = glob.glob("C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler/*/*llc.fits")
 
-flare_files = flare_files[3689:]
+# flare_files = flare_files[3689:]
 
 # =============================================================================
 # One KIC
@@ -756,7 +756,7 @@ magnitude = False
 
 
 # create output file
-fout = open("flatwrm_output_985_erg_229.txt", "w")
+fout = open("flatwrm_output_985_erg.txt", "w")
 if fit_events:
     header = "{:14}{:14}{:14}{:14}{:14}{:14}{:14}{:14}{:14}{:14}{:14}{:14}{:14}{:14}".format(\
         "KIC",\

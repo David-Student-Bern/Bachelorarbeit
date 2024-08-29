@@ -11,6 +11,12 @@ import time as tt
 # from astroquery.mast import Mast
 from astroquery.mast import Observations
 
+
+# =============================================================================
+# create a list with all KIC for all Okamoto flares
+# =============================================================================
+
+
 # List = np.loadtxt("aaList.txt", skiprows = 35, usecols = [0,11,12])
 
 # KIC = np.loadtxt("aaList.txt", dtype = str, skiprows = 35, usecols = [0]) # Kepler Input Catalog identifier
@@ -36,6 +42,12 @@ from astroquery.mast import Observations
 #     for i in range(np.size(short_KIC)):
 #         file.write(str(short_KIC[i]) + "\n")
 
+# =============================================================================
+# download all long cadence light curve (*.llc) files for the flares in
+# Okamoto's catalogue
+# =============================================================================
+
+
 short_KIC = np.loadtxt("KIC_list.txt", dtype = str)
 
 starti = 200
@@ -60,27 +72,3 @@ for tn in short_KIC[starti:endi]:
 end_time = tt.time()
 print("download time for ", np.size(short_KIC[starti:endi]), " objects: ", end_time-start_time)
 print("estimated duration for all: ",  np.size(short_KIC)/np.size(short_KIC[starti:endi])* (end_time-start_time))
-
-
-# tn = short_KIC[1]
-
-# if len(tn)==7:
-#     keplerObs = Observations.query_criteria(target_name='kplr00'+str(tn), obs_collection='Kepler')
-#     keplerProds = Observations.get_product_list(keplerObs)
-
-#     Observations.download_products(keplerProds, mrp_only = False, cache = False)
-# elif len(tn)==8:
-#     keplerObs = Observations.query_criteria(target_name='kplr0'+str(tn), obs_collection='Kepler')
-#     keplerProds = Observations.get_product_list(keplerObs)
-
-#     Observations.download_products(keplerProds, mrp_only = False, cache = False)
-# else:
-#     print("error, size =", len(tn))
-
-
-# keplerObs = Observations.query_criteria(target_name='kplr00'+str(KIC[0]), obs_collection='Kepler')
-# keplerProds = Observations.get_product_list(keplerObs)
-
-# Observations.download_products(keplerProds, mrp_only = False, cache = False)
-
-

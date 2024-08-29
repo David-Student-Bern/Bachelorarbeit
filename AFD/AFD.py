@@ -406,7 +406,7 @@ def plot_star(Teff, R, time, flux, n, plot_path, plot_file_name):
  # by david
 file_list = glob.glob("C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler/*/*lc.fits")
 
-file_list = file_list[1300:1340]
+# file_list = file_list[1300:1340]
 
 kepler_id_list = []
 quarter_list = []

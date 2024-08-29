@@ -70,3 +70,5 @@ virtual environment.txt
 /AFD/Kepler_Plots_0-30_3
 /AFD/Kepler_Plots_0-30_4
 /AFD/Results
+Okamoto_Data/get_Flare_files.py
+Okamoto_Data/plot_flare.py
