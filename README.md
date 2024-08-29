@@ -13,11 +13,10 @@ My thesis explains the modifications made to the two flare-finding algorithms in
 
 ## Structure of Repository
 
-- `random_files.py`
 - AFD
   - `AFD.py`
 
-    **Description:** AFD is a Python script for Automated Flare Detection and flare analysis, used on Kepler's light curves long cadence data.
+    **Description:** AFD is a Python script for Automated Flare Detection and flare analysis, used on Kepler's light curves long cadence data. For more details, read the accompanying [paper](https://arxiv.org/abs/2212.10224).
 
     **Author:** Original Code by Althukair and Tsiklauri, modified by Schwarz
 
@@ -41,10 +40,42 @@ My thesis explains the modifications made to the two flare-finding algorithms in
 
   - Kepler_Plots_all
  
-    **Description:** Contains the results from the final survey. The survey initially included one suspected binary candidate (KIC 007772296), which was later removed, resulting in two different formats for `final-flares.csv`, `flares-candidates.csv`:
+    **Description:** Contains the results from the final survey. The code was run for different ranges of light curve files (first to 1000th file, 1001st file to 2000th file, ...) to minimise the runtime for a stint and thus minimise the impact of a crash. The files were then merged into the final list. The survey initially included one suspected binary candidate (KIC 007772296), which was later removed, resulting in two different formats for the final list:
     
     - `*_all.csv` is the final list used for the analysis
     - `*_all_plus.csv` includes the flares found for the suspected binary candidate (KIC 007772296)
+
 - flatwrm-master
+  - `final_flatwrm.py`
+
+    **Description:** Code that uses machine learning method to detect flares. For more details, read the `README.md` in this directory or the accompanying [paper](https://ui.adsabs.harvard.edu/abs/2018A%26A...616A.163V/abstract).
+
+    **Author:** Original Code by Vida and Roettenbacher, modified by Schwarz
+
+    **Usage:**
+    1. add the directory to light curve files by changing the parameter `flare_files`
+    2. add the directory where you want the light curve plots saved by changing `plots_path`
+    3. name the output file by changing `fout`
+    4. check the initial parameters (`debug, fit_events, magnitude, flarepoints, sigma, period, degree, fwhm`)
+    5. run script
+    6. check output file for errors and debug
+
+ 
+  - `aflare.py`
+ 
+    **Description:** Analytic flare model
+ 
+  - `KpRF.txt`
+ 
+    **Description:** File containing the Kepler Instrument Response Function (high resolution)
+ 
+  - Kepler_31-265
+ 
+    **Description:** Contains the results from the final survey. The code had to be run multiple times because of crashes. After each crash, the run continued at the last KIC before the crash. The files were then merged into the final list. The survey initially included one suspected binary candidate (KIC 007772296), which was later removed, resulting in two different formats for the final list:
+
+    - `*_all.txt` is the final list used for the analysis
+    - `*_all_plus.txt` includes the flares found for the suspected binary candidate (KIC 007772296)
+    
 - Okamoto_Data
 - analysis
+- `random_files.py`
