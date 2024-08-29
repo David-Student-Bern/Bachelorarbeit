@@ -77,5 +77,39 @@ My thesis explains the modifications made to the two flare-finding algorithms in
     - `*_all_plus.txt` includes the flares found for the suspected binary candidate (KIC 007772296)
     
 - Okamoto_Data
+
+  - `aaList.txt`
+
+    **Description:** File containing flares found by [Okamoto et al.](https://iopscience.iop.org/article/10.3847/1538-4357/abc8f5) *without* the suspected binary candidate (KIC 007772296)
+
+  - `aaList_plus.txt`
+ 
+    **Description:** Original file containing flares found by [Okamoto et al.](https://iopscience.iop.org/article/10.3847/1538-4357/abc8f5)
+    
+  - `final_plot_flare.py`
+
+    **Description:** Creates plots for all the flares in `aaList.txt`
+
+    **Usage:**
+    1. change the parameters `short_KIC, Okamoto_data, flare_files, plots_path` to adjust for the local directories
+    2. run script
+
+  - `get_Okamoto_Data.py`
+ 
+    **Description:**
+    1. Creates a list with all KIC for all the flares found by Okamoto et al. --> `KIC_list.txt `
+    2. Downloads all light curve files for those KIC and creates a new directory for them: mastDownload\Kepler\
+  
+  - `KIC_list.txt`
+ 
+    **Description:** list with all KIC for all the flares found by Okamoto et al. created by `get_Okamoto_Data.py` *without* the suspected binary candidate (KIC 007772296)
+  - `KIC_list_plus.txt`
+ 
+    **Description:** list with all KIC for all the flares found by Okamoto et al. created by `get_Okamoto_Data.py`
+
+   - `plotting_light_curves.py`
+ 
+     **Description:** Generates figures showing the whole light curve from individual .fits files.
+ 
 - analysis
 - `random_files.py`
