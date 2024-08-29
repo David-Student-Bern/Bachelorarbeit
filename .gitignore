@@ -72,3 +72,13 @@ virtual environment.txt
 /AFD/Results
 Okamoto_Data/get_Flare_files.py
 Okamoto_Data/plot_flare.py
+analysis/analysis_0-30.py
+analysis/best_distr.py
+analysis/distr_energies.py
+analysis/energies_0-30.py
+analysis/energies_all.py
+analysis/flare_length.py
+analysis/flatwrm_0-30.py
+analysis/Okamoto_distr.py
+analysis/wait_times_0-30_4.py
+analysis/wait_times_Okamoto_all.py
