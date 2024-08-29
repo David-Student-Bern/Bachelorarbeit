@@ -63,3 +63,5 @@ Okamoto_Data/test_plot_flatwrm_results.py
 Okamoto_Data/test_save_flare_data.py
 /Okamoto_Data/venv
 virtual environment.txt
+AFD/
+.vscode/settings.json
