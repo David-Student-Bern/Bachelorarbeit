@@ -3,6 +3,8 @@
 Created on Tue Apr 30 07:08:45 2024
 
 @author: david
+
+goal: create wait time/energy plots
 """
 
 import numpy as np

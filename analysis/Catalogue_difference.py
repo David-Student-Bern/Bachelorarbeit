@@ -7,7 +7,7 @@ Created on Wed Aug 14 08:47:39 2024
 
 """
 Goal:
-    determine the difference between the effective temperatures and roational periods
+    determine the difference between the effective temperatures and rotational periods
     used with each survey
 """
 

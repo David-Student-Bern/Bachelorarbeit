@@ -3,6 +3,9 @@
 Created on Mon May 13 14:31:40 2024
 
 @author: david
+
+goal: Algorithm used for the random flare evaluation: 
+Create a subgroup of all flare .png files by using a random number generator
 """
 
 # import the module

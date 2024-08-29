@@ -3,7 +3,10 @@
 Created on Thu May  2 12:36:26 2024
 
 @author: david
+
+goal: create flare duration/energy plots
 """
+
 
 import numpy as np
 import pandas as pd

@@ -9,7 +9,7 @@ Created on Mon Aug 12 13:27:27 2024
 Goal: 
 
     find the flares with the highest energies and the longest duration and create 
-    a new list for them so that they can be analised further
+    a new list for them so that they can be analysed further
     
 """
 

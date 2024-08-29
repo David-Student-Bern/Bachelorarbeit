@@ -3,6 +3,9 @@
 Created on Mon May  6 09:08:48 2024
 
 @author: david
+
+goal: Same idea as in prot_Okamoto_all.py but instead of the rotational period the star type
+(<--> effective temperature of the star) is used to create different groups.
 """
 
 

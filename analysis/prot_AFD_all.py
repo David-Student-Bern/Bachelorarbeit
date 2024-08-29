@@ -3,6 +3,8 @@
 Created on Tue May  7 07:11:46 2024
 
 @author: david
+
+goal: create different plots for AFD including different ranges in rotational period
 """
 
 

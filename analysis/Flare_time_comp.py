@@ -3,6 +3,8 @@
 Created on Tue Aug  6 10:02:31 2024
 
 @author: david
+
+goal: compares the different flare times one flare for KIC 7264671 returned by Okamoto, FLATW'RM and AFD
 """
 import matplotlib.pyplot as plt
 import numpy as np

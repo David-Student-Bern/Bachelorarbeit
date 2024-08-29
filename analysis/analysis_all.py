@@ -5,6 +5,10 @@ Created on Mon Apr 29 06:49:02 2024
 @author: david
 """
 
+"""
+goals: find all common flares for the different surveys and create Venn diagrams
+"""
+
 import numpy as np
 import pandas as pd
 from matplotlib_venn import venn3, venn3_circles
