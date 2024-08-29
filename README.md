@@ -115,4 +115,6 @@ My thesis explains the modifications made to the two flare-finding algorithms in
 
   **Description:** Many different scripts were created to analyse various aspects of the flares, either comparing the catalogue made by Okamoto and al. to the catalogues made by the FLATW'RM and the AFD algorithms or for each catalogue individually.
 
+  **Usage:** To use these scripts, the path to the input files must be adapted to the local directory
+
 - `random_files.py`
