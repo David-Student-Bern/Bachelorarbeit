@@ -102,10 +102,10 @@ My thesis explains the modifications made to the two flare-finding algorithms in
   
   - `KIC_list.txt`
  
-    **Description:** list with all KIC for all the flares found by Okamoto et al. created by `get_Okamoto_Data.py` *without* the suspected binary candidate (KIC 007772296)
+    **Description:** List with all KIC for all the flares found by Okamoto et al. created by `get_Okamoto_Data.py` *without* the suspected binary candidate (KIC 007772296)
   - `KIC_list_plus.txt`
  
-    **Description:** list with all KIC for all the flares found by Okamoto et al. created by `get_Okamoto_Data.py`
+    **Description:** List with all KIC for all the flares found by Okamoto et al. created by `get_Okamoto_Data.py`
 
    - `plotting_light_curves.py`
  
@@ -113,8 +113,62 @@ My thesis explains the modifications made to the two flare-finding algorithms in
  
 - analysis
 
-  **Description:** Many different scripts were created to analyse various aspects of the flares, either comparing the catalogue made by Okamoto and al. to the catalogues made by the FLATW'RM and the AFD algorithms or for each catalogue individually.
+  **Description:** Many different scripts were created to analyse various aspects of the flares and create plots that illustrate them by eithher comparing the catalogue made by Okamoto and al. to the catalogues made by the FLATW'RM and the AFD algorithms or for each catalogue individually. The numbers and figures created with these scripts can be found in my thesis. 
 
   **Usage:** To use these scripts, the path to the input files must be adapted to the local directory
 
+  - `analysis_all.py`
+ 
+    **Description:**  Find all common flares for the different surveys and create Venn diagrams
+    
+  - `Catalogue_difference.py`
+ 
+    **Description:** Determine the difference between the effective temperatures and rotational periods used with each survey
+    
+  - `Extremals.py` 
+ 
+    **Description:** Find the flares with the highest energies and the longest duration and create a new list for them so that they can be analysed further
+    
+  - `Extremals_plots.py`
+ 
+    **Description:** Plot the flares that were filtered by Extremals.py and display flare energy and flare duration
+    
+  - `flare_length_all.py`
+ 
+    **Description:** Create flare duration/energy plots
+    
+  - `Flare_time_comp.py`
+ 
+    **Description:** Compares the different flare times one flare for KIC 7264671 returned by Okamoto, FLATW'RM and AFD
+    
+  - `Mean_plots.py`
+ 
+    **Description:** Plotting mean values for wait time, duration and flare energy in different ranges of rotational period
+    
+  - `Okamoto_flares.py`
+ 
+    **Description:** Find those stars that only Okamoto reported as flaring
+    
+  - `prot_AFD_all.py`
+ 
+    **Description:** Create different plots for AFD including different ranges in rotational period
+    
+  - `prot_Flatwrm_all.py`
+ 
+    **Description:** Create different plots for FLATW'RM including different ranges in rotational period
+    
+  - `prot_Okamoto_all.py`
+ 
+    **Description:** Create different plots for Okamoto including different ranges in rotational period
+    
+  - `star_type_Okamoto_all.py`
+ 
+    **Description:** Same idea as in prot_Okamoto_all.py but instead of the rotational period the star type (<--> effective temperature of the star) is used to create different groups.
+    
+  - `wait_times_all.py`
+ 
+    **Description:** Create wait time/energy plots
+    
 - `random_files.py`
+
+  **Description:** Algorithm used for the random flare evaluation: Create a subgroup of all flare .png files by using a random number generator
