@@ -1,6 +1,6 @@
 # Bachelorarbeit
 
-This repository contains all the code used for my Bachelor Thesis and flare catalogues. It includes code from other sources, namely:
+This repository contains all the code used for my Bachelor Thesis and flare catalogues generated with this code. It does not include the Kepler data used by the algorithms or any images created by the different scripts. It includes code from other sources, namely:
 
 - Notebook `kepler_lightcurve.ipynb` (Downloading and Using Kepler Data to Plot a Light Curve) by Thomas Dutkiewicz: [Github page](https://github.com/spacetelescope/notebooks/blob/master/notebooks/MAST/Kepler/Kepler_Lightcurve/kepler_lightcurve.ipynb)
   
@@ -9,9 +9,24 @@ This repository contains all the code used for my Bachelor Thesis and flare cata
 - AFD (Python script for Automated Flare Detection and flare analysis) by Althukair and Tsiklauri: [paper](https://arxiv.org/abs/2212.10224) and [Github page](https://github.com/akthukair/AFD)
 
 
-My thesis explains the modifications made to the two flare-finding algorithms in detail. Below is a short description of the structure of this repository and how to use the Code.
+My thesis explains the modifications made to the two flare-finding algorithms in detail. Below is a description of the structure of this repository and how to use the Code.
+
+## How to use this Code
+The following notes highlight the critical steps needed to generate a flare catalogue using Kepler Data. 
+
+1. Download light curves from the Kepler Archive (*llc.fits files for long cadence data was used in this thesis)
+   - For a given list of KIC the Python script `get_Okamoto_Data.py` could be used
+   - Otherwise, refer to this [Github page](https://github.com/spacetelescope/notebooks/blob/master/notebooks/MAST/Kepler/Kepler_Lightcurve/kepler_lightcurve.ipynb) for more information about how to load and extract information from Kepler light curve FITS files to plot a light curve 
+2. Run the two flare-finding algorithms
+   - More detailed information on how to use these algorithms can be found in the next section
+3. Do some analysis on the flares found by using the scripts in the *analyis* folder
+
+**Notes:**
+
+- FLATW'RM and AFD do not use the same catalogue for the stellar parameters, making it difficult to compare them directly. For a better analysis, download the latest catalogue for the stars used in your survey and ensure these stellar parameters are used for both algorithms (needs some changes to the `final_flatwrm.py` and `AFD.py` code).
 
 ## Structure of Repository
+In this section, the structure of the repository is displayed along with some explanatory text for each object.
 
 - AFD
   - `AFD.py`
