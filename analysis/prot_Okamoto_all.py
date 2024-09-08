@@ -54,29 +54,6 @@ Okamoto_data[3] = Okamoto_df[Okamoto_df['Prot'].between(15,25)]
 Okamoto_data[4] = Okamoto_df[Okamoto_df['Prot'].between(25,35)]
 Okamoto_data[5] = Okamoto_df[Okamoto_df['Prot'].between(35,100)]
 
-# =============================================================================
-# Flatwrm
-# =============================================================================
-# flatwrm_data = np.loadtxt("C:/Users/david/Documents/David/Unibe/Bachelorarbeit/flatwrm-master/Kepler_31-265/flatwrm_output_985_erg_all.txt", skiprows = 1)
-# Flatwrm_df = pd.DataFrame(
-#     flatwrm_data,
-#     columns = ["kepler_id","t_start", "t_end", "t_max", "flux_max", "raw_integral", "energy", "fit_amp", "fit_fwhm", "fit_t_start", "fit_t_end", "fit_t_max", "fit_integral", "fit_stdev"])
-
-# Okamoto_data = [0,0,0,0,0,0]
-
-# Okamoto_data[0] = Flatwrm_df[Flatwrm_df['kepler_id'].isin(np.ndarray.tolist(np.unique(Okamoto_df[Okamoto_df['Prot'].between(0,2)].values[:,0])))]
-# Okamoto_data[1] = Flatwrm_df[Flatwrm_df['kepler_id'].isin(np.ndarray.tolist(np.unique(Okamoto_df[Okamoto_df['Prot'].between(2,5)].values[:,0])))]
-# Okamoto_data[2] = Flatwrm_df[Flatwrm_df['kepler_id'].isin(np.ndarray.tolist(np.unique(Okamoto_df[Okamoto_df['Prot'].between(5,15)].values[:,0])))]
-# Okamoto_data[3] = Flatwrm_df[Flatwrm_df['kepler_id'].isin(np.ndarray.tolist(np.unique(Okamoto_df[Okamoto_df['Prot'].between(15,25)].values[:,0])))]
-# Okamoto_data[4] = Flatwrm_df[Flatwrm_df['kepler_id'].isin(np.ndarray.tolist(np.unique(Okamoto_df[Okamoto_df['Prot'].between(25,35)].values[:,0])))]
-# Okamoto_data[5] = Flatwrm_df[Flatwrm_df['kepler_id'].isin(np.ndarray.tolist(np.unique(Okamoto_df[Okamoto_df['Prot'].between(35,100)].values[:,0])))]
-
-# AFD
-# Okamoto_df = pd.read_csv("C:/Users/david/Documents/David/Unibe/Bachelorarbeit/AFD/Kepler_Plots_all/final-flares_all.csv")
-
-# AFDc_df = pd.read_csv("C:/Users/david/Documents/David/Unibe/Bachelorarbeit/AFD/Kepler_Plots_all/flares-candidates_all.csv")
-
-
 Okamoto_wait_times = [0,0,0,0,0,0]
 Okamoto_energies1 = [0,0,0,0,0,0]
 Okamoto_energies2 = [0,0,0,0,0,0]
@@ -180,6 +157,97 @@ range_array = (0, 50)
 
 # plot_histogram(Okamoto_wait_times, plot_filter, bins_set, range_array)
 
+# =============================================================================
+# new histogram
+# =============================================================================
+def plot_histogram2(data, plot_filter, bins_set, range_array):
+    
+    # compute f2: measurements are outside the selected range for plotting
+    allf1 = []
+    plot_label = []
+    for index in range(len(data)):
+        filter1 = 0
+        for item in data[index]:
+            if item < range_array[0] or item > 400:
+                filter1 +=1
+        if len(data[index]) == 0:
+            f1 = 0
+        else:
+            f1 = 100 * (filter1/len(data[index]))
+        allf1.append(f1)
+        label = plot_filter[index] + ': '+str(len(data[index]))+' gaps'+r', F$_1$ = ' + str(round(f1,3)) + '%'
+        plot_label.append(label)
+
+    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6,3))
+
+    ax.hist(data, bins = bins_set, range = range_array, label = plot_label, stacked = True)
+    xlabeltxt = "wait times [days]"
+    ax.set_xlabel(xlabeltxt, fontsize = 14)
+    ax.set_ylabel('Frequency', fontsize = 14)
+    ax.set_xlim([0, 400])
+    # Shrink current axis by 20%
+    # box = ax.get_position()
+    # ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+    
+    # Put a legend to the right of the current axis
+    ax.legend(loc='center right', fontsize = 12)
+    ax.set_title("Okamoto: Histogram for wait times", fontsize = 14)
+    ax.grid(True)
+    plt.show()
+
+def plot_chist2(data, plot_filter, bins_set, range_array):
+    
+    # compute f2: measurements are outside the selected range for plotting
+    allf1 = []
+    plot_label = []
+    for index in range(len(data)):
+        filter1 = 0
+        for item in data[index]:
+            if item < range_array[0] or item > 600:
+                filter1 +=1
+        if len(data[index]) == 0:
+            f1 = 0
+        else:
+            f1 = 100 * (filter1/len(data[index]))
+        allf1.append(f1)
+        label = plot_filter[index] +'\n'+r'F$_1$ = ' + str(round(f1,3)) + '%'
+        plot_label.append(label)
+    
+    temp = plt.hist(data, bins = bins_set, range = range_array, cumulative = -1)
+
+    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6,4))
+
+    hist, bin_edges = temp[0], temp[1]
+    bin_center = (bin_edges[:-1] + bin_edges[1:])/2
+    for i in range(np.size(plot_label)):
+        ax.plot(bin_center, hist[i], ".", label = plot_label[i])
+    xlabeltxt = "wait times [days]"
+    ax.set_xlabel(xlabeltxt, fontsize = 14)
+    ax.set_ylabel('Frequency', fontsize = 14)
+    ax.set_yscale('log')
+    ax.set_xlim([0, 600])
+    # Shrink current axis by 20%
+    box = ax.get_position()
+    ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+    
+    # Put a legend to the right of the current axis
+    ax.legend(loc='center left', fontsize=12, bbox_to_anchor=(1, 0.5))
+    ax.set_title("Okamoto: Cumulative Distribution for wait times", fontsize = 14)
+    ax.grid(True)
+    plt.show()
+
+# histogram parameter 1000
+bins_set = int(1000/5)
+range_array = (0, 1000)
+
+# plot_histogram2(Okamoto_wait_times, plot_filter, bins_set, range_array)
+
+# plot_chist2(Okamoto_wait_times, plot_filter, bins_set, range_array)
+
+# =============================================================================
+# distribution
+# =============================================================================
+
 def plot_dist(data, plot_filter, bins_set, range_array):
     
     # compute f2: measurements are outside the selected range for plotting
@@ -246,7 +314,7 @@ def plot_dist(data, plot_filter, bins_set, range_array):
         
         fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6,3))
         ax.hist(data[i], bins = range_array[1], density = True, range = range_array, label = plot_label[i], cumulative = True)
-        ax.plot(x_plot, np.cumsum(exp_dist(x_plot, *exp_parameters)), '.', label='Fit result')
+        ax.plot(x_plot, np.cumsum(exp_dist(x_plot, *exp_parameters)), '.', label='exponential')
         # ax.plot(x_plot, np.cumsum(rayleigh(x_plot, *ray_parameters)), '.', label='rayleigh')
         # ax.plot(x_plot, np.cumsum(chi(x_plot, *chi_parameters)), '.', label='chi')
         ax.plot(x_plot, np.cumsum(burr(x_plot, *burr_parameters)), '.', label='burr')
@@ -267,7 +335,7 @@ def plot_dist(data, plot_filter, bins_set, range_array):
 bins_set = int(1000/5)
 range_array = (0, 1000)
 
-# plot_dist(Okamoto_wait_times, plot_filter, bins_set, range_array)
+plot_dist(Okamoto_wait_times, plot_filter, bins_set, range_array)
 
 # histogram parameter 200
 bins_set = int(1000/20)
@@ -417,6 +485,8 @@ def plot_flare_length(data, energies, plot_filter):
 # Prot plots
 # =============================================================================
 
+from sklearn.metrics import r2_score
+
 def plot_prot(data, energies):
     
     # "polyfit"
@@ -430,10 +500,21 @@ def plot_prot(data, energies):
     
     xp = np.linspace(min(x), max(x), 1000)
     
+    # r-squared
+    print("deg 1: r2_score = ", r2_score(y, p1(x)))
+    print("deg 3: r2_score = ", r2_score(y, p(x)))
+    
+    R2_adj_1 = 1- (((1-r2_score(y, p1(x)))*(np.size(x)-1))/(np.size(x)-1-1))
+    R2_adj_3 = 1- (((1-r2_score(y, p(x)))*(np.size(x)-1))/(np.size(x)-3-1))
+    print("deg 1: adj = ", R2_adj_1)
+    print("deg 3: adj = ", R2_adj_3)
+    label1 = "poly of deg 1, R$^2$ = {:.3f}".format(R2_adj_1)
+    label3 = "poly of deg 1, R$^2$ = {:.3f}".format(R2_adj_3)
+    
     fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6,3))
     ax.scatter(data, energies,  s=2)
-    ax.plot(10**xp, 10**(p1(xp)), 'm--', label = "poly of deg 1")
-    ax.plot(10**xp, 10**(p(xp)), 'r-', label = "poly of deg 3")
+    ax.plot(10**xp, 10**(p1(xp)), 'm--', label = label1)
+    ax.plot(10**xp, 10**(p(xp)), 'r-', label = label3)
     ax.set_yscale('log')
     ax.set_xscale('log')
     ax.set_xlabel(r'P$_{rot}$ [days]')
@@ -443,4 +524,4 @@ def plot_prot(data, energies):
     ax.grid(True)
     plt.show()
 
-# plot_prot(Okamoto_df.values[:,5], Okamoto_df.values[:,3])
+plot_prot(Okamoto_df.values[:,5], Okamoto_df.values[:,3])

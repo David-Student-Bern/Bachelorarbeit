@@ -8,6 +8,13 @@ from astropy.io import fits as pyfits
 import glob
 from pathlib import Path
 
+plt.rc('font', size=14)          # controls default text sizes
+plt.rc('axes', titlesize=20)     # fontsize of the axes title
+plt.rc('axes', labelsize=16)    # fontsize of the x and y labels
+plt.rc('xtick', labelsize=14)    # fontsize of the tick labels
+plt.rc('ytick', labelsize=14)    # fontsize of the tick labels
+plt.rc('legend', fontsize=16)    # legend fontsize
+plt.rc('figure', titlesize=20)  # fontsize of the figure title
 
 def plot_star(Teff, R, time, flux, n, plot_path, plot_file_name):
     xsdict = []
@@ -18,10 +25,12 @@ def plot_star(Teff, R, time, flux, n, plot_path, plot_file_name):
     normalized_flux_list = list(normalized_flux)
     
     ## To produce figure 2a
+    plt.figure()
     plt.plot(time,normalized_flux, color='black')
     plt.xlabel('Time (BJD-2454833)')
     plt.ylabel('Normalized flux' r'$\;\;e^-/s$')
     plt.title('KIC:'r'$\;$' + str(kepler_id))
+    plt.tight_layout()
     plt.savefig(os.path.join(plot_path, plot_file_name[-35:-4]+"_figure_2a.png"))
     plt.close()
     # plt.show()
@@ -99,6 +108,8 @@ def plot_star(Teff, R, time, flux, n, plot_path, plot_file_name):
     plt.title('KIC:'r'$\;$' + str(kepler_id))
     plt.xlabel('Flux difference between two consecutive points')
     plt.ylabel('Number')
+    # plt.autofmt_xdate()
+    plt.tight_layout()
     plt.savefig(os.path.join(plot_path, plot_file_name[-35:-4]+"_figure_2c.png"))
     plt.close()
     # plt.show()
@@ -178,6 +189,7 @@ def plot_star(Teff, R, time, flux, n, plot_path, plot_file_name):
         plt.title('KIC:' r'$\;$' + str(kepler_id))
         plt.xlabel('Time (BJD-2454833)')
         plt.ylabel('Relative flux'+r'${\;\;\Delta F}/{F_\circ}$')
+        plt.tight_layout()
         plt.savefig(os.path.join(plot_path, plot_file_name[-35:-4]+"_"+str(count-1)+".png"))
         plt.close()
         #plt.show()
@@ -406,7 +418,9 @@ def plot_star(Teff, R, time, flux, n, plot_path, plot_file_name):
  # by david
 file_list = glob.glob("C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler/*/*lc.fits")
 
-# file_list = file_list[1300:1340]
+# thesis fig 10
+# file_list = file_list[1320:1337]
+# file_list = file_list[2312:2328]
 
 kepler_id_list = []
 quarter_list = []

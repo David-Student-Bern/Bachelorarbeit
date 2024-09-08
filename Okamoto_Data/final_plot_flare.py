@@ -11,6 +11,18 @@ import glob
 import pandas as pd
 from pathlib import Path
 
+SMALL_SIZE = 12
+MEDIUM_SIZE = 16
+BIGGER_SIZE = 20
+
+plt.rc('font', size=SMALL_SIZE)          # controls default text sizes
+plt.rc('axes', titlesize=MEDIUM_SIZE)     # fontsize of the axes title
+plt.rc('axes', labelsize=MEDIUM_SIZE)    # fontsize of the x and y labels
+plt.rc('xtick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
+plt.rc('ytick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
+plt.rc('legend', fontsize=MEDIUM_SIZE)    # legend fontsize
+plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
+
 short_KIC = np.loadtxt("C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/KIC_list.txt")
 
 Okamoto_data = np.loadtxt("C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/aaList.txt", skiprows = 35, usecols=[0, 11, 12, 13, 1, 6]) # Kepler Input Catalog identifier
@@ -20,7 +32,11 @@ Okamoto_df = pd.DataFrame(
 
 flare_files = glob.glob("C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/mastDownload/Kepler/*/*llc.fits")
 
-# flare_files = flare_files[1000:]
+# figure 2 in thesis
+# flare_files = flare_files[1612:1630]
+# flare_files = flare_files[2311:2328]
+# flare_files = flare_files[2124:2141]
+# flare_files = flare_files[1167:1185]
 
 # plot files with flares and flares
 for filename in flare_files:
@@ -45,7 +61,7 @@ for filename in flare_files:
     Flare_dur = Okamoto_KIC.values[:,2]
 
     
-    plots_path = 'C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/Okamoto_flares/'+str(KIC)
+    plots_path = 'C:/Users/david/Documents/David/Unibe/Bachelorarbeit/Okamoto_Data/Okamoto_flares_thesis/'+str(KIC)
     Path(plots_path).mkdir(parents=True, exist_ok=True)
 
     for k in range(np.size(Peak_times)):
@@ -71,8 +87,9 @@ for filename in flare_files:
             plt.legend()
             plt.xlabel('Time (days)')
             plt.ylabel('Flux (electrons/second)')
-            titletxt = "Okamoto_flares/"+str(KIC)+"/Okamoto_"+str(KIC)+"_"+str(Peak_times[k])+".png"
+            titletxt = "Okamoto_flares_thesis/"+str(KIC)+"/Okamoto_"+str(KIC)+"_"+str(Peak_times[k])+".png"
             plt.savefig(titletxt)
             # plt.show()
             plt.clf()
     plt.close('all')
+    
